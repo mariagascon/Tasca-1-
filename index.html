@@ -15,32 +15,35 @@
     <!--Introducción del primer campo: fecha-->
     <h3>Introduce el día inicial en que comenzaron a pagarse las cuotas</h3>
     <h5>Sólo computará el primer día de cada mes</h5>
-    <form class="form-inline">
+    <form class="form-inline"  onsubmit="return calculohipoteca()">
         <input type="date" name="fecha" id="fec">
-    </form>
+
     <!--Introducción del segundo campo: capital. El valor de este campo es que después utilizaremos para la función-->
     <h3>Introduce el capital solicitado</h3>
     <h5>El capital no puede ser superior a 1.000.000 euros</h5>
-    <form class="form-inline">
-        <input type="number" name="capital" value="cap" id="cap" max=1000000>
-    </form>
+
+        <input type="number" name="capital" value="capital" id="capital" min=1 max=1000000 required>
+
     <!--Introducción del tercer campo: interés. El valor de este campo es que después utilizaremos para la función-->
     <h3>Introduce el interés de tu hipoteca</h3>
     <h5>Introduce el porcentaje fijo que se pacta como concepto de pago por el dinero prestado</h5>
-    <form class="form-inline">
-        <input type="number" name="interés" value="int" id="int">
-    </form>
+    
+        <input type="number" step=".01" name="interés" value="interés" id="interes" min=1 required>
+    
     <!--Introducción del cuarto campo: plazo. El valor de este campo es que después utilizaremos para la función-->
     <h3>Introduce el plazo en que debes abonar el préstamo</h3>
     <h5>Introduce cuántos meses faltan para finalizar el pago de tu hipoteca</h5>
-    <form class="form-inline">
-        <input type="number" name="plazo" value="pla" id="pla">
-    </form>
+   
+        <input type="number" name="plazo" value="plazo" id="plazo" min=1 max=480 required>
+ 
 
     <!--Botón 'Calcular'-->
-    <input type="button" value="Calcula" onclick="calculohipoteca()">
-    
+    <form action="#">
+        <input type="submit" value="Calcula">
+    </form>
+
     <!--Resultado del programa: cuota mensual-->
+    </br>
     <div id="resultado"></div>
 </body>
 </html>

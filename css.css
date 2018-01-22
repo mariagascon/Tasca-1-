@@ -2,3 +2,8 @@
     background-color: rgb(163, 121, 121);
     text-align: center;
 }
+
+#resultado {
+    border-style: dotted;
+    font-size: 40px;
+}
