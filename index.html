@@ -11,38 +11,39 @@
 </head>
 <body class="fondo">
     <!--Título del programa-->
-    <h1>Calcula la cuota mensual de tu hipoteca</h1>
-    <!--Introducción del primer campo: fecha-->
+    <h1 class="titulo">Calcula la cuota mensual de tu hipoteca</h1>
+
+    <!--Introducción del primer campo: fecha. El valor de este campo es el que después utilizaremos en la función 'fechameses'-->
     <h3>Introduce el día inicial en que comenzaron a pagarse las cuotas</h3>
     <h5>Sólo computará el primer día de cada mes</h5>
-    <form class="form-inline"  onsubmit="return calculohipoteca()">
-        <input type="date" name="fecha" id="fec">
+    <form role="form"  onsubmit="return calculohipoteca()">
+        <input type="date" class="form-control" style="text-align:center" name="fecha" id="fecha">
 
-    <!--Introducción del segundo campo: capital. El valor de este campo es que después utilizaremos para la función-->
+    <!--Introducción del segundo campo: capital. El valor de este campo es el que después utilizaremos en la función 'calculohipoteca'-->
     <h3>Introduce el capital solicitado</h3>
     <h5>El capital no puede ser superior a 1.000.000 euros</h5>
 
-        <input type="number" name="capital" value="capital" id="capital" min=1 max=1000000 required>
+        <input type="number" class="form-control" style="text-align:center" name="capital" id="capital" min=1 max=1000000 placeholder="Ej: 1000" required>
 
-    <!--Introducción del tercer campo: interés. El valor de este campo es que después utilizaremos para la función-->
+    <!--Introducción del tercer campo: interés. El valor de este campo es el que después utilizaremos en la función 'calculohipoteca'-->
     <h3>Introduce el interés de tu hipoteca</h3>
     <h5>Introduce el porcentaje fijo que se pacta como concepto de pago por el dinero prestado</h5>
     
-        <input type="number" step=".01" name="interés" value="interés" id="interes" min=1 required>
+        <input type="number" step=".01" class="form-control" style="text-align:center" name="interés" id="interes" min=1 placeholder="Ej: 1.7" required>
     
-    <!--Introducción del cuarto campo: plazo. El valor de este campo es que después utilizaremos para la función-->
+    <!--Introducción del cuarto campo: plazo. El valor de este campo es el que después utilizaremos en las funciones 'calculohipoteca' y 'fechameses'-->
     <h3>Introduce el plazo en que debes abonar el préstamo</h3>
     <h5>Introduce cuántos meses faltan para finalizar el pago de tu hipoteca</h5>
    
-        <input type="number" name="plazo" value="plazo" id="plazo" min=1 max=480 required>
+        <input type="number" class="form-control" style="text-align:center" name="plazo" id="plazo" min=1 max=480 placeholder="Ej: 24" required>
  
 
     <!--Botón 'Calcular'-->
     <form action="#">
-        <input type="submit" value="Calcula">
+        <input type="submit" value="Calcula" class="buttons">
     </form>
 
-    <!--Resultado del programa: cuota mensual-->
+    <!--Resultado del programa: cuota mensual y fecha de finalización-->
     </br>
     <div id="resultado"></div>
 </body>
